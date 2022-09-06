@@ -1,5 +1,7 @@
 package jpabook.jpashop;
 
+import jpabook.jpashop.hello.Mem;
+import jpabook.jpashop.hello.MemberRepository;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -13,7 +15,7 @@ import javax.transaction.Transactional;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-class MemberTest {
+class MemTest {
     @Autowired
     MemberRepository memberRepository;
 
@@ -22,13 +24,13 @@ class MemberTest {
     @Transactional
     @Rollback(false)
     public void testMember(){
-        Member member = new Member();
-        member.setUsername("memberA");
-        Long savedId = memberRepository.save(member);
-        Member findMember = memberRepository.find(savedId);
-        Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
+        Mem mem = new Mem();
+        mem.setUsername("memberA");
+        Long savedId = memberRepository.save(mem);
+        Mem findMem = memberRepository.find(savedId);
+        Assertions.assertThat(findMem.getId()).isEqualTo(mem.getId());
 
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
-        Assertions.assertThat(findMember).isEqualTo(member);
+        Assertions.assertThat(findMem.getUsername()).isEqualTo(mem.getUsername());
+        Assertions.assertThat(findMem).isEqualTo(mem);
     }
 }

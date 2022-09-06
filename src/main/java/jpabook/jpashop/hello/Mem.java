@@ -1,4 +1,4 @@
-package jpabook.jpashop;
+package jpabook.jpashop.hello;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class Member {
+public class Mem {
 
     @Id
     @GeneratedValue

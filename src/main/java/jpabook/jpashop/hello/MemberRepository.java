@@ -1,4 +1,4 @@
-package jpabook.jpashop;
+package jpabook.jpashop.hello;
 
 import org.springframework.stereotype.Repository;
 
@@ -11,12 +11,12 @@ public class MemberRepository {
     @PersistenceContext
     private EntityManager em;
 
-    public Long save(Member member) {
-        em.persist(member);
-        return member.getId();
+    public Long save(Mem mem) {
+        em.persist(mem);
+        return mem.getId();
     }
 
-    public Member find(Long id) {
-        return em.find(Member.class, id);
+    public Mem find(Long id) {
+        return em.find(Mem.class, id);
     }
 }
