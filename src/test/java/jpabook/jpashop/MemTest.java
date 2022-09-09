@@ -2,6 +2,7 @@ package jpabook.jpashop;
 
 import jpabook.jpashop.hello.Mem;
 import jpabook.jpashop.hello.MemberRepository;
+import jpabook.jpashop.service.MemberService;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
@@ -18,8 +19,8 @@ import javax.transaction.Transactional;
 class MemTest {
     @Autowired
     MemberRepository memberRepository;
-
-
+    @Autowired
+    MemberService memberService;
     @Test
     @Transactional
     @Rollback(false)
