@@ -19,6 +19,7 @@ public abstract class Item { //상속 해야되서 추상
     private Long id;
 
     private String name;
+
     private int price;
     private int stockQuantity;
 
