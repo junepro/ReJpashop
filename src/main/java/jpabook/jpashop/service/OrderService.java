@@ -45,7 +45,6 @@ public class OrderService {
     public void cancelOrder(Long orderId) {
         Order order = orderRepository.findOne(orderId);
         order.cancel();
-
     }
 
     public List<Order> findOrders(OrderSearch orderSearch) {
