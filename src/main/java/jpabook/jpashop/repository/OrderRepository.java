@@ -83,4 +83,17 @@ public class OrderRepository {
         TypedQuery<Order> query = em.createQuery(cq).setMaxResults(1000); //
         return query.getResultList();
     }
+
+
+    //jpa만 있는 fetch 조인 - lazy 관련 영속성 여러번 호출없이 최적화 즉 n+1 문제 x
+    public List<Order> findAllWithMemberDelivery() {
+        List<Order> result = em.createQuery(
+                "select o from Order o " +
+                        " join fetch o.member m" +
+                        " join fetch o.delivery d", Order.class
+        ).getResultList();
+
+        return result;
+    }
+
 }
